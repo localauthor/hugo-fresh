@@ -1,35 +1,49 @@
-{{- $section2 := .Site.Params.section2 }}
-{{- $title    := index $section2 "title" }}
-{{- $subtitle := index $section2 "subtitle" }}
-{{- $features := index $section2 "features" }}
-<section class="section is-medium" id="section2">
+{{- $section2   := .Site.Params.section2 }}
+{{- $title      := index $section2 "title" }}
+{{- $subtitle   := index $section2 "subtitle" }}
+{{- $image      := index $section2 "image" }}
+{{- $text      := index $section2 "text" }}
+{{- $text2      := index $section2 "text2" }}
+{{- $text3      := index $section2 "text3" }}
+{{- $text4      := index $section2 "text4" }}
+{{- $buttonText := index $section2 "buttontext" }}
+{{- $buttonLink := index $section2 "buttonlink" }}
+<a id="about"></a>
+<section class="section section-feature-grey is-medium" id="section3">
   <div class="container">
-    <div class="columns">
-      <div class="column is-centered-tablet-portrait">
-        <h1 class="title section-title">{{ $title }}</h1>
-        <h3 class="subtitle is-5 is-muted">{{ $subtitle }}</h3>
-        <div class="divider"></div>
-      </div>
-      <div class="column is-7 mt-60">
-        {{- range $features }}
-        <article class="media icon-box">
-          <figure class="media-left">
-            <p class="image">
-              <img src="{{ printf "/images/illustrations/icons/%s.svg" .icon | relURL }}">
-            </p>
-          </figure>
-          <div class="media-content mt-50">
-            <div class="content">
-              <p>
-                <span class="icon-box-title">{{ .title }}</span>
-
-                <span class="icon-box-text">{{ .text | markdownify }}</span>
-              </p>
-            </div>
-          </div>
-        </article>
-        {{- end }}
-      </div>
+    <div class="column is-centered-tablet-portrait">
+      <h1 class="title section-title">{{ $title }}</h1>
+      <h3 class="subtitle is-5 is-muted">{{ $subtitle }}</h3>
+      <div class="divider"></div>
     </div>
+    <div class="columns">
+      <div class="column is-8 is-offset-3">
+
+        <div class="has-text-centered">
+          <h2 class="subtitle is-5">{{ $text }}</h2>
+        </div>
+
+        <br>
+        <div class="has-text-centered">
+              <h2 class="subtitle is-5">{{ $text2 }}</h2>
+        </div>
+
+        <br>
+        <div class="has-text-centered">
+          <h2 class="subtitle is-5">{{ $text3 }}</h2>
+        </div>
+
+        <br>
+        <div class="has-text-centered">
+          <h2 class="subtitle is-5">{{ $text4 }}</h2>
+        </div>
+
+      </div>
+      
+    <!--       <p class="has-text-centered mt-20"> -->
+      <!--       <a class="button cta is-large rounded secondary-btn raised" href="{{ $buttonLink }}"> -->
+        <!--     {{ $buttonText }} -->
+        <!--   </a> -->
+      <!-- </p> -->
   </div>
 </section>
